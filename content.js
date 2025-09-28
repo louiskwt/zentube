@@ -1,13 +1,38 @@
+// inject css to block videos & ads
+const style = document.createElement("style");
+if (style) {
+  style.innerHTML = `
+  #primary, #items, ytd-rich-grid-renderer, ytd-guide-section-renderer {
+    display: none !important
+  }
+`;
+}
+
+document.head.appendChild(style);
+
 function hideYouTubeVideos() {
   const primaryContent = document.getElementById("primary");
-  primaryContent.style.display = "None";
+  if (primaryContent) primaryContent.remove();
   const items = document.getElementById("items");
-  items.style.display = "None";
+  if (items) items.style.display = "None";
 }
+
+// throttle
+function throttle(fn, wait) {
+  let time = Date.now();
+  return () => {
+    if (time + wait - Date.now() < 0) {
+      fn();
+      time = Date.now();
+    }
+  };
+}
+
+const throttleHide = throttle(hideYouTubeVideos, 10);
 
 const observer = new MutationObserver((mutations) => {
   mutations.forEach(() => {
-    hideYouTubeVideos();
+    throttleHide();
   });
 });
 
@@ -19,3 +44,5 @@ if (targetNode) {
     subtree: true,
   });
 }
+
+hideYouTubeVideos();
