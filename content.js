@@ -12,7 +12,7 @@ document.head.appendChild(style);
 
 function hideYouTubeVideos() {
   const primaryContent = document.getElementById("primary");
-  if (primaryContent) primaryContent.remove();
+  if (primaryContent) primaryContent.style.display = "None";
   const items = document.getElementById("items");
   if (items) items.style.display = "None";
 }
