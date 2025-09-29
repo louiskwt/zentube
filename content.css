@@ -1,0 +1,48 @@
+/* content.css - Instant hiding of video elements */
+
+/* Hide main video renderers and thumbnails */
+ytd-rich-item-renderer,
+ytd-video-renderer,
+ytd-compact-video-renderer,
+ytd-grid-video-renderer,
+ytd-reel-shelf-renderer,
+ytd-rich-shelf-renderer {
+  display: none !important;
+}
+
+/* Hide video players and embeds */
+video,
+#movie_player,
+.html5-video-player,
+yt-player-legacy-desktop,
+ytd-player {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+/* Hide Shorts/Reels sections */
+ytd-shorts,
+#shorts-container,
+[role="main"] ytd-reel-item-renderer {
+  display: none !important;
+}
+
+/* Hide recommendation shelves */
+#contents ytd-section-list-renderer,
+#contents ytd-horizontal-card-list-renderer {
+  display: none !important;
+}
+
+/* General fallback: Hide any element with video-related attributes/classes */
+[aria-label*="video"],
+[class*="video-"],
+[class*="reel-"],
+[class*="thumbnail"] {
+  display: none !important;
+}
+
+/* Ensure no flicker during load */
+body {
+  --ytd-rich-grid-items-per-row: 0; /* Prevents grid rendering */
+}
