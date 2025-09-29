@@ -3,7 +3,8 @@
   "description": "Go Zen Mode",
   "version": "1.0",
   "manifest_version": 3,
-  "permissions": ["activeTab", "scripting"],
+  "permissions": ["activeTab", "scripting", "declarativeNetRequest", "declarativeNetRequestWithHostAccess"],
+  "host_permissions": ["https://www.youtube.com/*"],
   "content_scripts": [
     {
       "matches": ["*://*.youtube.com/*"],
@@ -12,5 +13,14 @@
   ],
   "action": {
     "default_popup": "index.html"
+  },
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "ruleset_1",
+        "enabled": true,
+        "path": "rules_1.json"
+      }
+    ]
   }
 }
