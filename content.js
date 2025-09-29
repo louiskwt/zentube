@@ -1,15 +1,3 @@
-// inject css to block videos & ads
-// const style = document.createElement("style");
-// if (style) {
-//   style.innerHTML = `
-//   #primary, #items, ytd-rich-grid-renderer, ytd-guide-section-renderer {
-//     display: none !important
-//   }
-// `;
-// }
-
-// document.head.appendChild(style);
-
 function hideYouTubeVideos() {
   const primaryContent = document.getElementById("primary");
   if (primaryContent) primaryContent.style.display = "None";
@@ -28,7 +16,7 @@ function throttle(fn, wait) {
   };
 }
 
-const throttleHide = throttle(hideYouTubeVideos, 10);
+const throttleHide = throttle(hideYouTubeVideos, 5);
 
 const observer = new MutationObserver((mutations) => {
   mutations.forEach(() => {
