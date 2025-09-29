@@ -1,14 +1,14 @@
 // inject css to block videos & ads
-const style = document.createElement("style");
-if (style) {
-  style.innerHTML = `
-  #primary, #items, ytd-rich-grid-renderer, ytd-guide-section-renderer {
-    display: none !important
-  }
-`;
-}
+// const style = document.createElement("style");
+// if (style) {
+//   style.innerHTML = `
+//   #primary, #items, ytd-rich-grid-renderer, ytd-guide-section-renderer {
+//     display: none !important
+//   }
+// `;
+// }
 
-document.head.appendChild(style);
+// document.head.appendChild(style);
 
 function hideYouTubeVideos() {
   const primaryContent = document.getElementById("primary");
