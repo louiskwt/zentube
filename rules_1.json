@@ -6,36 +6,13 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "https://www.youtube.com/youtubei/v1/browse*",
-      "resourceTypes": ["xmlhttprequest", "script"]
+      "urlFilter": "https://www.youtube.com/*guide?*",
+      "resourceTypes": ["xmlhttprequest", "script"],
+      "initiatorDomains": ["www.youtube.com"]
     }
   },
   {
     "id": 2,
-    "priority": 1,
-    "action": {
-      "type": "block"
-    },
-    "condition": {
-      "urlFilter": "https://www.youtube.com/*initial_data*",
-      "resourceTypes": ["xmlhttprequest", "script"],
-      "initiatorDomains": ["www.youtube.com"]
-    }
-  },
-  {
-    "id": 3,
-    "priority": 1,
-    "action": {
-      "type": "block"
-    },
-    "condition": {
-      "urlFilter": "https://www.youtube.com/*continuation*",
-      "resourceTypes": ["xmlhttprequest", "script"],
-      "initiatorDomains": ["www.youtube.com"]
-    }
-  },
-  {
-    "id": 4,
     "priority": 1,
     "action": {
       "type": "block"
@@ -47,7 +24,7 @@
     }
   },
   {
-    "id": 5,
+    "id": 3,
     "priority": 1,
     "action": {
       "type": "block"
@@ -59,7 +36,7 @@
     }
   },
   {
-    "id": 6,
+    "id": 4,
     "priority": 1,
     "action": {
       "type": "block"
@@ -70,7 +47,7 @@
     }
   },
   {
-    "id": 7,
+    "id": 5,
     "priority": 1,
     "action": {
       "type": "block"
