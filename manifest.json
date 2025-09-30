@@ -7,7 +7,7 @@
   "host_permissions": ["https://www.youtube.com/*"],
   "content_scripts": [
     {
-      "matches": ["*://*.youtube.com/*"],
+      "matches": ["*://*.youtube.com/"],
       "js": ["content.js"],
       "css": ["content.css"],
       "all_frames": true
